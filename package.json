@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "types": "./types",
+  "types": "types",
   "scripts": {
     "test": "jest",
-    "document": "./node_modules/.bin/jsdoc -c jsdoc.json"
+    "document": "./node_modules/.bin/jsdoc -c jsdoc.json",
+    "build:types": "npx -p typescript tsc src/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "repository": {
     "type": "git",
