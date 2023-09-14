@@ -1,6 +1,6 @@
 {
   "name": "@csduck/css-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple utilities library for CSS",
   "main": "src/index.js",
   "types": "types",
