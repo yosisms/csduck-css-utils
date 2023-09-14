@@ -1,3 +1,4 @@
 module.exports = {
-    generateBemBlock: require('./generate-bem-block/generate-bem-block'),
+    generateBEMClassName: require('./generate-bem-classname/generate-bem-classname'),
+    generateHyphenClassName: require('./generate-hyphen-classname/generate-hyphen-classname'),
 }

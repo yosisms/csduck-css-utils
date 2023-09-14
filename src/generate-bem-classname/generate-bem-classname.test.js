@@ -1,8 +1,8 @@
-const generateBemBlock = require('./generate-bem-block.js'); // Replace 'yourModule' with the actual module name where your function is defined
+const generateBEMClassName = require('./generate-bem-classname.js'); // Replace 'yourModule' with the actual module name where your function is defined
 
-describe('generateBemBlock', () => {
+describe('generateBEMClassName', () => {
     test('should generate BEM block with only block and modifier', () => {
-        const className = generateBemBlock({
+        const className = generateBEMClassName({
             block: 'button',
             modifier: 'primary',
         });
@@ -10,7 +10,7 @@ describe('generateBemBlock', () => {
     });
 
     test('should generate BEM block with block, element, and modifier', () => {
-        const className = generateBemBlock({
+        const className = generateBEMClassName({
             block: 'card',
             element: 'header',
             modifier: 'large',
@@ -19,7 +19,7 @@ describe('generateBemBlock', () => {
     });
 
     test('should generate BEM block with multiple blocks and modifiers', () => {
-        const className = generateBemBlock({
+        const className = generateBEMClassName({
             block: ['button', 'card'],
             modifier: ['primary', 'large'],
         });
@@ -27,7 +27,7 @@ describe('generateBemBlock', () => {
     });
 
     test('should generate BEM block with extension class', () => {
-        const className = generateBemBlock({
+        const className = generateBEMClassName({
             block: 'button',
             modifier: 'primary',
             extend: 'custom-button',
@@ -36,7 +36,7 @@ describe('generateBemBlock', () => {
     });
 
     test('should generate BEM block with block, element, modifier, and extension', () => {
-        const className = generateBemBlock({
+        const className = generateBEMClassName({
             block: 'card',
             element: 'header',
             modifier: 'large',
@@ -46,7 +46,7 @@ describe('generateBemBlock', () => {
     });
 
     test('should handle empty input', () => {
-        const className = generateBemBlock({});
+        const className = generateBEMClassName({});
         expect(className).toBe('');
     });
 });

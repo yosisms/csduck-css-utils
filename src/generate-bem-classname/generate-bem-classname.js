@@ -15,11 +15,11 @@ const { toStringArray } = require('../utils');
  */
 
 /**
- * # Generate BEM Block
+ * # Generate BEM Class Name
  * @param config {BEMBlockConfigs}
  * @returns {string} - BEM block class name
  */
-function generateBemBlock(config) {
+function generateBEMClassName(config) {
     // turn the block, element and modifier into arrays:
     const blocks = toStringArray(config.block);
     const elements = toStringArray(config.element);
@@ -91,4 +91,4 @@ function generateModifierArray(modifier) {
     return [];
 }
 
-module.exports = generateBemBlock;
+module.exports = generateBEMClassName;
