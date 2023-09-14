@@ -1,7 +1,7 @@
 {
   "name": "@csduck/css-utils",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple utilities library for CSS",
   "main": "src/index.js",
   "types": "types",
   "scripts": {
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/yosisms/csduck-css-utils.git"
   },
   "author": "Yosi Shemesh",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yosisms/csduck-css-utils/issues"
   },
@@ -23,5 +23,13 @@
     "jest": "^29.7.0",
     "jsdoc": "^4.0.2",
     "typescript": "^5.2.2"
-  }
+  },
+  "keywords": [
+    "class",
+    "classname",
+    "css",
+    "bem",
+    "bem-classname",
+    "css naming convention"
+  ]
 }
