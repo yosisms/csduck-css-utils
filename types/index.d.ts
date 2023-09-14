@@ -1,1 +1,2 @@
-export let generateBemBlock: typeof import("./generate-bem-block/generate-bem-block");
+export let generateBEMClassName: typeof import("./generate-bem-classname/generate-bem-classname");
+export let generateHyphenClassName: typeof import("./generate-hyphen-classname/generate-hyphen-classname");

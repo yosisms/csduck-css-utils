@@ -1,4 +1,4 @@
-export = generateBemBlock;
+export = generateBEMClassName;
 /**
  * @typedef {Object} ModifierDeclaration
  * @property {string} name - Modifier name
@@ -12,12 +12,12 @@ export = generateBemBlock;
  * @property [extend] {string} - Extend block name, functions like a normal class name and will not be duplicated for each block.
  */
 /**
- * # Generate BEM Block
+ * # Generate BEM Class Name
  * @param config {BEMBlockConfigs}
  * @returns {string} - BEM block class name
  */
-declare function generateBemBlock(config: BEMBlockConfigs): string;
-declare namespace generateBemBlock {
+declare function generateBEMClassName(config: BEMBlockConfigs): string;
+declare namespace generateBEMClassName {
     export { ModifierDeclaration, BEMBlockConfigs };
 }
 type BEMBlockConfigs = {
