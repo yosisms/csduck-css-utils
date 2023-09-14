@@ -14,6 +14,13 @@
  * # Generate Hyphen Class Name
  * This function takes a record of classes and for each class, it will take the variants and create another class with hyphenated variants if its not undefined or if there is a condition and its falsy.
  *
+ * ### Example:
+ * ```js
+ * generateHyphenClassName({
+ *    btn: ['primary', { name: 'lg', condition: window.innerWidth > 768 }]
+ * }); // => returns 'btn btn-primary' and if window.innerWidth > 768 it will return 'btn btn-primary btn-lg'
+ * ```
+ *
  * ### undefined use case:
  * This function allows you to pass undefined for simple use case so you dont need to validate variants before passing them to this function. for example:
  * const color = 'primary', size = undefined;

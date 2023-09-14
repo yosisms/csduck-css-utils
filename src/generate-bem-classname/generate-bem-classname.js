@@ -15,8 +15,19 @@ const { toStringArray } = require('../utils');
  */
 
 /**
- * # Generate BEM Class Name
- * @param config {BEMBlockConfigs}
+ * ## Generate BEM Class Name
+ * This function generates a BEM block class name from the config object, with the following format: `block__element--modifier`.
+ *
+ * ### Example:
+ * ```js
+ * generateBEMClassName({
+     *  block: 'block',
+     *  element: 'element',
+     *  modifier: 'modifier',
+     *  extend: 'mt-5'
+ *  }); // => returns 'block__element block__element--modifier mt-5'
+ * ```
+ * @param config {BEMBlockConfigs} - The config object where you can specify the block, element, modifier and extensions.
  * @returns {string} - BEM block class name
  */
 function generateBEMClassName(config) {
