@@ -40,6 +40,19 @@ const classNames = generateBEMClassName({
 // Result: 'block__element block__element--modifier mt-5'
 ```
 
+#### Config Types:
+| Property  | Type                                                                             | Description |
+|-----------|----------------------------------------------------------------------------------| --- |
+| `block`?: | `string \| (undefined \| string)[]`                                              | The block name. |
+| `element`?: | `string \| (undefined \| string)[]`                                              | The element name. |
+| `modifier`?: | `string \| ModifierDeclaration \| (undefined \| string \| ModifierDeclaration)[]` | The modifier name. |
+| `extend`?: | `string`                                               | The class name to extend. |
+
+#### Additional Types:
+| Type  | Type Definition                                                                             | Description                                                          |
+|-----------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| `ModifierDeclaration` | `{ name: string, condition?: boolean }`                                              | in case you want to condition the modifier and give it a custom name |
+
 ### Hyphenated Convention
 `generateHyphenClassName(config: HyphenBlockConfigs): string`
 The `generateHyphenClassName` function generates class names using a hyphenated convention. It takes a configuration object where you can specify variants for each block. Variants are hyphenated to the block name if they are not `undefined` or if a condition is met.
@@ -55,6 +68,12 @@ const classNames = generateHyphenClassName({
 ```
 
 **note:** In the hyphenated convention, class names use kebab-case (hyphen-separated) instead of camelCase (js variables naming convention).
+
+#### Additional Types:
+| Type  | Type Definition                                                                             | Description                                                                                       |
+|-----------|----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| `HyphenBlockConfigs` | `{ [blockName: string]: (string \| HyphenVariant \| (undefined \| string \| HyphenVariant)[]) }`                                              | The config values that passed to the `generateHyphenClassName` function. |
+| `HyphenVariant` | `{ name: string, condition?: boolean }`                                              | in case you want to condition the variant and give it a custom name                               |
 
 ## Contribution
 Contributions and bug reports are welcome! Feel free to open issues or submit pull requests on the [GitHub repository](https://github.com/yosisms/csduck-css-utils).
