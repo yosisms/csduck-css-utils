@@ -25,37 +25,41 @@
  * This function allows you to pass undefined for simple use case so you dont need to validate variants before passing them to this function. for example:
  * const color = 'primary', size = undefined;
  * - generateHyphenClassName({ btn: [color, size] }) => 'btn btn-primary' (size is undefined so it will be ignored)
- * @param config {HyphenBlockConfigs}
+ * @param {HyphenBlockConfigs} config
+ * @param {string} [extend]
  * @returns {string} - Hyphenated class name
  */
-function generateHyphenClassName(config) {
-    /** @type {string[]} */
-    const classNames = [];
+function generateHyphenClassName(config, extend) {
+  /** @type {string[]} */
+  const classNames = [];
 
-    Object.keys(config).forEach((block) => {
-        // push block to the classNames array:
-        classNames.push(block);
+  Object.keys(config).forEach((block) => {
+    // push block to the classNames array:
+    classNames.push(block);
 
-        const variants = config[block];
-        // for each variant, validate and push to the classNames array in hyphenated form:
-        variants.forEach((variant) => {
-            if(!variant || variant === '' || variant?.name === '') return;
+    const variants = config[block];
+    // for each variant, validate and push to the classNames array in hyphenated form:
+    variants.forEach((variant) => {
+      if (!variant || variant === "" || variant?.name === "") return;
 
-            if(typeof variant === 'string') {
-                classNames.push(`${block}-${variant}`);
-            }
+      if (typeof variant === "string") {
+        classNames.push(`${block}-${variant}`);
+      }
 
-            if(typeof variant === 'object') {
-                const { name, condition } = variant;
-                if(!!condition && !!name) {
-                    classNames.push(`${block}-${name}`);
-                }
-            }
-        });
+      if (typeof variant === "object") {
+        const { name, condition } = variant;
+        if (!!condition && !!name) {
+          classNames.push(`${block}-${name}`);
+        }
+      }
     });
+  });
 
-    return classNames.join(' ').trim();
+  if (extend !== undefined) {
+    classNames.push(extend);
+  }
+
+  return classNames.join(" ").trim();
 }
 
 module.exports = generateHyphenClassName;
-
